@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif, serif, 'Times New Roman';
+    background-image: url(../img/dot-grid.png);
+    margin-left:100px;
+    margin-right: 100px;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.main-text {
+    
+}
+
+.box {
+    width:auto;
+    
+
+}
+
+a { 
+    color: navy;
+}
+
+h1 {
+    font-size: 2rem;
+}

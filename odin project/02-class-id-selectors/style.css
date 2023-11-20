@@ -1,0 +1,22 @@
+* {
+    font-family: Verdana, "DejaVu Sans", sans-serif;
+}
+
+p {
+    background-color: pink;
+}
+
+#number-two {
+    color:blue;
+    font-size: 36px;
+}
+
+#number-four {
+    background-color: lightgreen;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.number-three {
+    font-size: 24px;
+}
