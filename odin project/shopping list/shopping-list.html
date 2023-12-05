@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button class="inputButton">Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+  
+
+    addGlobalEventListener("click", ".inputButton", e =>{
+      document.querySelector("input").focus()
+      let inputValue = document.querySelector("input").value
+      document.querySelector("input").value = ""
+      const li = document.createElement('li');
+      const span = document.createElement('span');
+      const button = document.createElement('button');
+      li.appendChild(span)
+      li.appendChild(button)
+      span.textContent = inputValue
+      button.textContent = "Delete"
+      button.classList.add("deleteButton")
+      const mainList = document.querySelector("ul")
+      mainList.appendChild(li)
+      button.onclick = () => mainList.removeChild(li)
+    })
+
+    function addGlobalEventListener(type, selector, callback) {
+      document.addEventListener(type, e => {
+        if (e.target.matches(selector)) callback(e)
+      })
+    }
+    
+    document.querySelector("input").focus()
+    
+    </script>
+  </body>
+</html>

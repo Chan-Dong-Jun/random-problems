@@ -11,6 +11,10 @@ let numFinder = string => {
 
 let numValidator = (num,rowIndex) => {
     if (rowIndex!=0 && /[^.0-9]/.test(datastream[rowIndex-1].slice(num[1]-1,num[2]+2))) {
+        console.log(datastream[rowIndex-1].slice(num[1]-1,num[2]+2))
+    }
+    //console.log(datastream[rowIndex-1].slice(num[1]-1,num[2]+2))
+    if (rowIndex!=0 && /[^.0-9]/.test(datastream[rowIndex-1].slice(num[1]-1,num[2]+2))) {
         return true
     }
     if (rowIndex!=datastream.length-1 && /[^.0-9]/.test(datastream[rowIndex+1].slice(num[1]-1,num[2]+2))) {
@@ -19,7 +23,7 @@ let numValidator = (num,rowIndex) => {
     if (num[1] != 0 && /[^.0-9]/.test(datastream[rowIndex][num[1]-1])) {
         return true
     }
-    if (num[1] != datastream[0].length && /[^.0-9]/.test(datastream[rowIndex][num[2]+1])) {
+    if (num[1] != datastream[0].length-1 && /[^.0-9]/.test(datastream[rowIndex][num[2]+1])) {
         return true
     }
     return false
@@ -30,6 +34,7 @@ let res= 0
 for (let [rowIndex,row] of datastream.entries()) {
     rowNums = numFinder(row)
     for (let num of rowNums) {
+        console.log(num)
         if (numValidator(num, rowIndex)) {
             list.push(num[0])
             res += Number(num[0])
@@ -37,7 +42,8 @@ for (let [rowIndex,row] of datastream.entries()) {
 
     }
 }
-console.log(datastream.length)
-console.log(res)
+// console.log(datastream.length)
+// console.log(res)
+// console.log(list)
 
 //console.log(datastream)
